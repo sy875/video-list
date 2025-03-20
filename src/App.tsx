@@ -37,7 +37,7 @@ function App() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      search()
+      if (searchTerm.length > 0) search()
     }, 500);
 
     // Cleanup the timer fn
@@ -55,7 +55,7 @@ function App() {
   }
 
   if (loading) {
-    return <div> Loading...</div>
+    return <div className="absolute top-1/2 left-1/2 text-xl font-bold"> Loading...</div>
   }
 
 

@@ -37,16 +37,19 @@ const VideoList: React.FC<VideoListProps> = ({ videos }) => {
         return num;
     }
 
-
-
     return (
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 justify-center'>
             {
                 videos?.map((video: any, index: number) => (
+                    // https://www.youtube.com/watch?v=75hqPk6pq5g
+
+
                     <div key={index} className='flex flex-col gap-2 cursor-pointer hover:scale-105 transition-all mx-auto'>
-                        <img
-                            className='w-[320px] rounded-sm'
-                            src={video?.items?.snippet?.thumbnails?.standard?.url} />
+                        <a href={`https://www.youtube.com/watch?v=${video?.items?.id}`} target="_blank" rel="noopener noreferrer">
+                            <img
+                                className='w-[320px] rounded-sm'
+                                src={video?.items?.snippet?.thumbnails?.standard?.url} />
+                        </a>
                         <h2 className='text-gray-900'>{video?.items?.snippet?.title}</h2>
                         <div className="flex gap-2 text-sm text-gray-700">
                             <h2 className=''>{nFormatter(video?.items?.statistics?.viewCount)} Views</h2>
