@@ -4,7 +4,7 @@ import VideoList from "./components/VideoList";
 
 
 function App() {
-  const [page, setPage] = useState(1);
+  // const [page, setPage] = useState(1);
   const [videos, setVideos] = useState([]);
   const [filteredVideos, setFilteredVideos] = useState([])
   const [searchTerm, setSearchTerm] = useState("");
@@ -12,7 +12,7 @@ function App() {
 
   const getAllData = async () => {
     console.log("getall data called")
-    const url = `https://api.freeapi.app/api/v1/public/youtube/videos?page=${page}&limit=40`
+    const url = `https://api.freeapi.app/api/v1/public/youtube/videos?page=${1}&limit=40`
     try {
       setLoading(true)
       const response = await fetch(url);
@@ -33,7 +33,7 @@ function App() {
 
   useEffect(() => {
     getAllData();
-  }, [page]); // Fetch data when the page changes
+  }, []); // Fetch data when the page changes
 
   useEffect(() => {
     const timer = setTimeout(() => {

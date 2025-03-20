@@ -1,6 +1,27 @@
-import React from 'react'
+interface VideoSnippet {
+    title: string;
+    thumbnails: {
+        standard: {
+            url: string;
+        };
+    };
+}
 
-const VideoList = ({ videos }) => {
+interface VideoStatistics {
+    viewCount: number;
+    likeCount: number;
+}
+
+interface VideoItem {
+    snippet: VideoSnippet;
+    statistics: VideoStatistics;
+}
+
+interface VideoListProps {
+    videos: VideoItem[];
+}
+
+const VideoList: React.FC<VideoListProps> = ({ videos }) => {
 
 
     function nFormatter(num: number) {
