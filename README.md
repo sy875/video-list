@@ -1,3 +1,13 @@
+# Video Listing website
+This website list video by using freeapi and redirect users to youtube when clicked on video card.
+# How to start
+-1. npm install
+-2. npm run dev
+# Website Picture
+
+![image](https://github.com/user-attachments/assets/769a6217-0f63-4f1b-9ac7-38d2a51da7d2)
+
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
